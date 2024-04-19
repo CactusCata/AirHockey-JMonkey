@@ -52,11 +52,32 @@
 		<maven.plugin.compiler.version>3.13.0</maven.plugin.compiler.version>
 		<maven.plugin.javadoc.version>3.6.3</maven.plugin.javadoc.version>
 		<maven.plugin.release.version>3.0.1</maven.plugin.release.version>
-		<maven.plugin.source.version>3.3.0</maven.plugin.source.version>		
+		<maven.plugin.source.version>3.3.0</maven.plugin.source.version>
+
+		<slf4j.version>2.0.9</slf4j.version>
 	</properties>
 
   
 	<dependencies>
+
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.30</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-engine</artifactId>
+			<version>5.9.3</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-dbcp2</artifactId>
+			<version>2.7.0</version>
+		</dependency>
 
 		<dependency>
 			<groupId>com.github.stephengold</groupId>
@@ -129,7 +150,13 @@
 			<groupId>${jme3_g}</groupId>
 			<artifactId>jme3-vr</artifactId>
 			<version>${jme3_v}</version>
-		</dependency>	
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.30</version>
+			<scope>compile</scope>
+		</dependency>
 	</dependencies>
   
 	<build>

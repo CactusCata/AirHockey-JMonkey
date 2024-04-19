@@ -12,10 +12,12 @@ import com.jme3.math.Vector3f;
 import com.jme3.scene.Node;
 import com.jme3.scene.Spatial;
 import fr.utln.jmonkey.MainApp;
+import fr.utln.jmonkey.game.Game;
+import fr.utln.jmonkey.game.PlayerNumber;
 
 public class Grabber {
 
-    private static final float MOTION_SCALE = 80.0f;
+    private static final float MOTION_SCALE = 8.0f;
 
     private final Node grabable;
     private final Node grabbed;
@@ -103,16 +105,17 @@ public class Grabber {
 
         for (int i = 0; i < results.size(); i++) {
             CollisionResult currentCollision = results.getCollision(i);
-            if (currentCollision.getGeometry().getName().equals("model_perfect-geom-0")) {
+            //if (currentCollision.getGeometry().getName().equals("model_perfect-geom-0")) {
                 lastCorrectPos = currentCollision.getContactPoint().clone();
+                Game.instance.correctFuturePos(PlayerNumber.PLAYER_ONE, lastCorrectPos);
                 RigidBodyControl control = (RigidBodyControl) item.getControl(0);
                 //control.setPhysicsLocation(lastCorrectPos);
                 Vector3f itemPos = item.getLocalTranslation();
                 Vector3f dir = lastCorrectPos;
-                itemPos = dir.subtract(itemPos).mult(new Vector3f(4.0f, 0.0f, 4.0f));
+                itemPos = dir.subtract(itemPos).mult(new Vector3f(MOTION_SCALE, 0.0f, MOTION_SCALE));
                 control.setLinearVelocity(itemPos);
                 break;
-            }
+            //}
         }
     }
 

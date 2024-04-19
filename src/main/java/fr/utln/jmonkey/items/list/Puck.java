@@ -12,6 +12,7 @@ public class Puck extends ItemGravitable {
                 .setScale(scale)
                 .setInitialRotation(3 * FastMath.HALF_PI , new Vector3f(1,0,0))
                 .buildItemAsModel("Models/AirHockeyPuck/10511_Hockey_puck_v1_L3.obj"));
+        super.getControl().setRestitution(0.1f);
     }
 
 }

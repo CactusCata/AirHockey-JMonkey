@@ -12,6 +12,7 @@ public class Racket extends ItemGravitable {
                 .setScale(scale)
                 .setParentNode(parentNode)
                 .buildItemAsModel("Models/Air Hockey Paddle/hockeypaddle.obj"));
+        super.getControl().setRestitution(0.1f);
     }
 
 }

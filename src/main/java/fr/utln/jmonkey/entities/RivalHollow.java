@@ -14,9 +14,9 @@ import java.io.*;
 
 public class RivalHollow {
 
-    public static Node spawn() {
-        Node node = (Node) MainApp.instance.getAssetManager().loadModel("Models/rivals/lose.glb");
-
+    public static Spatial spawn() {
+        //Node node = (Node) MainApp.instance.getAssetManager().loadModel("Models/rivals/lose.glb");
+        Spatial node = MainApp.instance.getAssetManager().loadModel("Models/defeated.glb");
         //node.setCullHint(Spatial.CullHint.Never);
 
         return node;
