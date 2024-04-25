@@ -10,6 +10,7 @@
           <onHover name="pulsate" scaleFactor="0.008" startColor="#f600" endColor="#ffff" post="true"/>
         </effect>
         <text id="text" font="aurulent-sans-16.fnt" color="#000f" text="Hello from jME3" align="center" valign="center" />
+        <control name="button" label="Cliquez ici" id="myButton" align="center" valign="center"/>
       </panel>
     </layer>
   </screen>

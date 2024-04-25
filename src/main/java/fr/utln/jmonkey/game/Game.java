@@ -1,6 +1,7 @@
 package fr.utln.jmonkey.game;
 
 import com.jme3.math.Vector3f;
+import fr.utln.jmonkey.hud.HudScore;
 import fr.utln.jmonkey.items.GoalResult;
 import fr.utln.jmonkey.utils.MathUtils;
 import lombok.Getter;
@@ -26,6 +27,7 @@ public class Game {
         } else if (goalResult == GoalResult.RIVAL_SCORED_GOAL) {
             p2.getScore().addPoint();
         }
+        HudScore.onScoreUpdated();
     }
 
     public void correctFuturePos(PlayerNumber playerNumber, Vector3f futurePuckPos) {

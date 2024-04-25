@@ -1,5 +1,7 @@
 package fr.utln.jmonkey.items.list;
 
+import com.jme3.bullet.BulletAppState;
+import com.jme3.bullet.control.RigidBodyControl;
 import com.jme3.material.Material;
 import com.jme3.math.Vector3f;
 import com.jme3.scene.Geometry;
@@ -29,6 +31,14 @@ public class Ground {
 
         this.geom.setMaterial(mat_brick);                   // set the cube's material
         MainApp.instance.getRootNode().attachChild(this.geom);              // make the cube appear in the scene
+
+        RigidBodyControl landscape = new RigidBodyControl(0);
+        geom.addControl(landscape);
+    }
+
+
+    public void applyGravity(BulletAppState bulletAppState) {
+        bulletAppState.getPhysicsSpace().add(geom);
     }
 
 }

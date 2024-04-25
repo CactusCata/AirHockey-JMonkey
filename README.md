@@ -41,3 +41,6 @@ app.setSettings(settings);
 
 https://www.inventati.org/1337gallery/scripts/jme-ttf/jttf.html
 https://hub.jmonkeyengine.org/t/jme-truetypefont-rendering-library/35395
+
+Collision listener
+https://wiki.jmonkeyengine.org/docs/3.4/core/gui/nifty_gui_xml_layout.html
